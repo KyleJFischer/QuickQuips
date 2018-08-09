@@ -31,6 +31,7 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goToJSONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeNewQuipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -38,7 +39,6 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donateToCreatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,29 +75,36 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
             // goToJSONToolStripMenuItem
             // 
             this.goToJSONToolStripMenuItem.Name = "goToJSONToolStripMenuItem";
-            this.goToJSONToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.goToJSONToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.goToJSONToolStripMenuItem.Text = "Go to JSON";
             this.goToJSONToolStripMenuItem.Click += new System.EventHandler(this.goToJSONToolStripMenuItem_Click);
             // 
             // makeNewQuipToolStripMenuItem
             // 
             this.makeNewQuipToolStripMenuItem.Name = "makeNewQuipToolStripMenuItem";
-            this.makeNewQuipToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.makeNewQuipToolStripMenuItem.Text = "Make new Quip";
+            this.makeNewQuipToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.makeNewQuipToolStripMenuItem.Text = "Manage Quips";
             this.makeNewQuipToolStripMenuItem.Click += new System.EventHandler(this.makeNewQuipToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(154, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -122,13 +129,6 @@
             this.donateToCreatorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.donateToCreatorToolStripMenuItem.Text = "Donate to Creator";
             this.donateToCreatorToolStripMenuItem.Click += new System.EventHandler(this.donateToCreatorToolStripMenuItem_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // Form1
             // 

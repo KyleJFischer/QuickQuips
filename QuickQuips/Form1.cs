@@ -19,6 +19,7 @@ namespace QuickQuips
         string savedQuips = Properties.Settings.Default.QuipFileLocation;
         KeyboardHook hook = new KeyboardHook();
         List<Quip> quips = null;
+        bool displayed = false;
         public Form1()
         {
             InitializeComponent();
@@ -63,20 +64,19 @@ namespace QuickQuips
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
             // show the keys pressed in a label.
-
-            if (!this.TopMost)
+            
+            if (!this.Visible)
             {
                 this.TopMost = true;
                 this.Show();
 
                     this.Location = new Point(Cursor.Position.X - this.Size.Width/2 , Cursor.Position.Y - this.Size.Height / 2);
+                this.TopMost = false;
             }
             else
             {
                 this.TopMost = false;
                 this.Hide();
-
-                //this.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
             }
             
             
@@ -137,10 +137,9 @@ namespace QuickQuips
 
         private void makeNewQuipToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var creator = new QuipCreator();
-            creator.GiveMeQuips(quips);
-            creator.GiveMeForm1(this);
-            creator.Show();
+            var manager = new QuipManager();
+            manager.init(quips, this);
+            manager.Show();
         }
 
         private void donateToCreatorToolStripMenuItem_Click(object sender, EventArgs e)

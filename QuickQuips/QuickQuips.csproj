@@ -64,6 +64,12 @@
     <Compile Include="QuipCreator.Designer.cs">
       <DependentUpon>QuipCreator.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuipManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuipManager.Designer.cs">
+      <DependentUpon>QuipManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="QuipCreator.resx">
       <DependentUpon>QuipCreator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuipManager.resx">
+      <DependentUpon>QuipManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
