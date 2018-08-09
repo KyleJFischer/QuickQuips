@@ -16,7 +16,7 @@ namespace QuickQuips
     public partial class Form1 : Form
     {
 
-        string savedQuips = @"Q:\Quips.json";
+        string savedQuips = Properties.Settings.Default.QuipFileLocation;
         KeyboardHook hook = new KeyboardHook();
         List<Quip> quips = null;
         public Form1()
@@ -25,7 +25,8 @@ namespace QuickQuips
             hook.KeyPressed +=
            new EventHandler<KeyPressedEventArgs>(hook_KeyPressed);
             // register the control + alt + F12 combination as hot key.
-            hook.RegisterHotKey(QuickQuips.ModifierKeys.Win, Keys.NumPad7);
+            hook.RegisterHotKey(QuickQuips.ModifierKeys.Shift | QuickQuips.ModifierKeys.Control, Keys.X);
+            
             
         }
 
@@ -39,7 +40,7 @@ namespace QuickQuips
             } else {
                 quips = new List<Quip>();
             }
-                    
+                 
             var buttons = createButtons(quips);
             foreach(var but in buttons)
             {
@@ -47,13 +48,37 @@ namespace QuickQuips
             }
         }
 
+        public void reloadFlowLayout(List<Quip> list)
+        {
+
+            flowLayoutPanel1.Controls.Clear();
+            var buttons = createButtons(quips);
+            foreach (var but in buttons)
+            {
+                flowLayoutPanel1.Controls.Add(but);
+            }
+        }
+
+
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
             // show the keys pressed in a label.
-            this.TopMost = true;
-            this.Show();
+
+            if (!this.TopMost)
+            {
+                this.TopMost = true;
+                this.Show();
+
+                    this.Location = new Point(Cursor.Position.X - this.Size.Width/2 , Cursor.Position.Y - this.Size.Height / 2);
+            }
+            else
+            {
+                this.TopMost = false;
+                this.Hide();
+
+                //this.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
+            }
             
-            this.Location = new Point(Cursor.Position.X , Cursor.Position.Y);
             
         }
 
@@ -65,7 +90,7 @@ namespace QuickQuips
                 var but = new Button();
                 but.Click += item.executeQuip;
                 but.Click += closeWindow;
-                but.Size = new Size(100, 30);
+                but.Size = new Size(100, 50);
                 but.Text = item.ToString();
                 buttons.Add(but);
             }
@@ -102,6 +127,25 @@ namespace QuickQuips
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var settingsForm = new Settings();
+            settingsForm.ShowDialog();
+        }
+
+        private void makeNewQuipToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var creator = new QuipCreator();
+            creator.GiveMeQuips(quips);
+            creator.GiveMeForm1(this);
+            creator.Show();
+        }
+
+        private void donateToCreatorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"https://www.youtube.com/watch?v=dQw4w9WgXcQ");
         }
     }
 }

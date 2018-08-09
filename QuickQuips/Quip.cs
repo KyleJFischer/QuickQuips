@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace QuickQuips
 {
-    class Quip
+    public class Quip
     {
         public int id;
         public QuipMode mode;

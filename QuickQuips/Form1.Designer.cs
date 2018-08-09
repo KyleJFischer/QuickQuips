@@ -38,6 +38,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donateToCreatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 24);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(284, 237);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(324, 277);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // menuStrip1
@@ -58,13 +59,14 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(324, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
             this.goToJSONToolStripMenuItem,
             this.makeNewQuipToolStripMenuItem,
             this.toolStripSeparator1,
@@ -85,6 +87,7 @@
             this.makeNewQuipToolStripMenuItem.Name = "makeNewQuipToolStripMenuItem";
             this.makeNewQuipToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.makeNewQuipToolStripMenuItem.Text = "Make new Quip";
+            this.makeNewQuipToolStripMenuItem.Click += new System.EventHandler(this.makeNewQuipToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -118,12 +121,20 @@
             this.donateToCreatorToolStripMenuItem.Name = "donateToCreatorToolStripMenuItem";
             this.donateToCreatorToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.donateToCreatorToolStripMenuItem.Text = "Donate to Creator";
+            this.donateToCreatorToolStripMenuItem.Click += new System.EventHandler(this.donateToCreatorToolStripMenuItem_Click);
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(324, 301);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
@@ -150,6 +161,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem donateToCreatorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 
